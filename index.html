@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anirudh Anil Negi - Construction Management Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .project-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #2a5298;
+            border-radius: 4px;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: bold;
+        }
+        
+        .project-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .project-type {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        
+        .achievement {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .achievement:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-category h3 {
+            color: #2a5298;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .skill-item {
+            background: #e8f4f8;
+            padding: 0.5rem 1rem;
+            margin: 0.4rem 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tab {
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            color: #2a5298;
+        }
+        
+        .tab.active {
+            color: #2a5298;
+            border-bottom-color: #2a5298;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-header {
+                flex-direction: column;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ANIRUDH ANIL NEGI</h1>
+        <p>Construction Management Professional | QA/QC Specialist | Project Engineer</p>
+        <div class="contact-info">
+            <a href="tel:9452990007">📞 (945) 299-0007</a>
+            <a href="mailto:axn0175@gmail.com">✉️ axn0175@gmail.com</a>
+            <a href="https://linkedin.com/in/anirudhanegi" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p>Results-driven Construction Management professional with 5+ years of expertise in QA/QC operations, project execution, and quality assurance across data centers, infrastructure, and commercial developments. Proven track record of managing projects valued up to $200 million while maintaining exceptional quality standards and achieving significant cost savings. Currently pursuing Master of Science in Construction Management at UT Arlington.</p>
+        </div>
+
+        <div class="section">
+            <h2>Key Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$200M</div>
+                    <div class="stat-label">Project Portfolio Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Reduction in Material Rework</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Concrete Mix Designs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Decrease in NCRs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8%</div>
+                    <div class="stat-label">Cost Savings Achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-label">NCR During Audits</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Portfolio Projects</h2>
+            
+            <div class="nav-tabs">
+                <button class="tab active" onclick="showTab('professional')">Professional Projects</button>
+                <button class="tab" onclick="showTab('academic')">Academic Projects</button>
+            </div>
+
+            <div id="professional" class="tab-content active">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Multi-Million Dollar Data Center & Infrastructure Portfolio</div>
+                            <div class="project-duration">May 2022 - May 2024 | CMV Infra Project Ltd.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Data Centers</span>
+                        <span class="project-type">Rigid Roads</span>
+                        <span class="project-type">Bridges</span>
+                        <span class="project-type">Commercial</span>
+                    </div>
+                    <div class="achievement">Led QA/QC operations for RMC batching plant and site execution across projects valued up to $200 million</div>
+                    <div class="achievement">Designed, tested, and approved 100+ specialized concrete mix designs (M20-M80 grade)</div>
+                    <div class="achievement">Reduced material rework by 30% through systematic Root Cause Analysis (RCA)</div>
+                    <div class="achievement">Achieved 5-8% cost savings through improved material utilization and vendor management</div>
+                    <div class="achievement">Awarded "Excellent Employee" (2023) for exceptional structural compliance and quality performance</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Raymond REALTY High-Rise Township Development</div>
+                            <div class="project-duration">Aug 2021 - May 2022 | Star Crete LLP</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">High-Rise</span>
+                        <span class="project-type">Residential</span>
+                        <span class="project-type">Township</span>
+                    </div>
+                    <div class="achievement">Managed on-site QA/QC in compliance with ASTM and ACI standards</div>
+                    <div class="achievement">Achieved Zero NCR during audits by standardizing testing and documentation procedures</div>
+                    <div class="achievement">Resolved 25+ critical NCRs, reducing pour delays by 20% via effective RCA & CAPA</div>
+                    <div class="achievement">Ensured schedule adherence using Primavera P6 for synchronized pour approvals</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Large-Scale Land Development & Custom Home Construction</div>
+                            <div class="project-duration">Jun 2020 - July 2021 | Shree Ram Traders</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Land Development</span>
+                        <span class="project-type">Residential</span>
+                        <span class="project-type">Infrastructure</span>
+                    </div>
+                    <div class="achievement">Directed land development projects converting 20-40 acre parcels into residential & commercial subdivisions</div>
+                    <div class="achievement">Coordinated end-to-end delivery including acquisition, infrastructure installation & custom home construction</div>
+                    <div class="achievement">Executed comprehensive quality control protocols with soil analysis, concrete and steel testing</div>
+                    <div class="achievement">Supervised 40+ laborers while maintaining project timelines and budget adherence</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Property & Infrastructure Valuation Services</div>
+                            <div class="project-duration">Nov 2019 - May 2020 | Creative Valuers & Engineers</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Valuation</span>
+                        <span class="project-type">Industrial</span>
+                        <span class="project-type">Residential</span>
+                    </div>
+                    <div class="achievement">Conducted site inspections and valuation assessments for residential and industrial assets</div>
+                    <div class="achievement">Ensured 100% measurement accuracy using total station and laser distance tools</div>
+                    <div class="achievement">Produced detailed valuation reports combining engineering, cost, and market data for financial institutions</div>
+                </div>
+            </div>
+
+            <div id="academic" class="tab-content">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Residential House Plan - Quantity Takeoffs & Project Scheduling</div>
+                            <div class="project-duration">Jan 2025 - Apr 2025 | UT Arlington</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Cost Estimation</span>
+                        <span class="project-type">Scheduling</span>
+                        <span class="project-type">Planning</span>
+                    </div>
+                    <div class="achievement">Executed precise quantity take-offs and cost estimation using Bluebeam, Excel, and RS Means</div>
+                    <div class="achievement">Developed detailed project schedule using Primavera P6 with WBS, activities, and resource allocations</div>
+                    <div class="achievement">Identified critical path for optimal timeline management and potential cost savings</div>
+                    <div class="achievement">Applied forecasting and performance monitoring techniques to improve planning reliability</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">California Residential Project - Advanced Planning & Scheduling</div>
+                            <div class="project-duration">Jan 2025 - Apr 2025 | UT Arlington</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Primavera P6</span>
+                        <span class="project-type">Resource Management</span>
+                        <span class="project-type">Critical Path</span>
+                    </div>
+                    <div class="achievement">Developed comprehensive construction schedule with detailed WBS, Gantt charts, and critical path analysis</div>
+                    <div class="achievement">Incorporated California state-specific building codes and compliance requirements</div>
+                    <div class="achievement">Performed resource leveling and cost analysis to optimize labor allocation</div>
+                    <div class="achievement">Resolved scheduling conflicts through resource reallocation while maintaining timeline integrity</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">Highway Extension Project - Field Operations Analysis</div>
+                            <div class="project-duration">Aug 2025 - Dec 2025 | UT Arlington</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="project-type">Earthwork</span>
+                        <span class="project-type">Equipment Planning</span>
+                        <span class="project-type">Operations</span>
+                    </div>
+                    <div class="achievement">Executed Earthwork Analysis using mass diagrams to optimize cut/fill balance and material movement</div>
+                    <div class="achievement">Developed Equipment Deployment Plans specifying zones for dozers, scrapers, and trucks</div>
+                    <div class="achievement">Determined balanced equipment numbers to maximize operational efficiency and minimize idle time</div>
+                    <div class="achievement">Improved haul cycle efficiency through optimized equipment routing and site planning</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills & Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Software & Tools</h3>
+                    <div class="skill-item">AutoCAD</div>
+                    <div class="skill-item">Revit Architecture</div>
+                    <div class="skill-item">Primavera P6</div>
+                    <div class="skill-item">MS Project</div>
+                    <div class="skill-item">Bluebeam Revu</div>
+                    <div class="skill-item">Heavy Bid</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Quality & Standards</h3>
+                    <div class="skill-item">QA/QC Documentation</div>
+                    <div class="skill-item">RCA & CAPA</div>
+                    <div class="skill-item">Concrete Mix Design</div>
+                    <div class="skill-item">ASTM Standards</div>
+                    <div class="skill-item">ISO 9001:2015</div>
+                    <div class="skill-item">ACI Standards</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <div class="skill-item">Project Scheduling</div>
+                    <div class="skill-item">Cost Estimation</div>
+                    <div class="skill-item">Material Testing</div>
+                    <div class="skill-item">BIM</div>
+                    <div class="skill-item">Resource Planning</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-item">Procore Certified</div>
+                    <div class="skill-item">OSHA Certified</div>
+                    <div class="skill-item">Construction Safety</div>
+                    <div class="skill-item">AutoCAD & Revit</div>
+                    <div class="skill-item">Bluebeam Revu</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="project-card">
+                <div class="project-title">Master of Science in Construction Management</div>
+                <div class="project-duration">Expected Dec 2026 | University of Texas at Arlington</div>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Bachelor of Technology in Civil Engineering</div>
+                <div class="project-duration">Aug 2016 - June 2019 | Graphic Era Hill University, Dehradun, India</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+</body>
+</html>
